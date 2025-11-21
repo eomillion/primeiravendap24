@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira Venda em 24 Horas - Curso Caio Martins</title>
+    <!-- Carregamento do Tailwind CSS para estilo moderno e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração da fonte Inter e cores personalizadas (VIBRANTES/IMPERIAIS) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            --color-primary: #FFC000; /* Gold Intenso para Realeza */
+            --color-secondary: #0F0F0F; /* Preto de Fundo mais Rico */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-secondary); /* Usa o novo fundo */
+            color: #E5E7EB; /* Cinza claro para o texto */
+        }
+        .cta-button {
+            /* Gradiente Dourado mais Intenso e Vibrante */
+            background-image: linear-gradient(90deg, #FFC000, #FF8C00); /* Rich Gold to Dark Orange */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 192, 0, 0.6); /* Sombra mais intensa */
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 192, 0, 0.8);
+        }
+        /* Estilo para animação de scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Estilo para vídeos verticais (Stories) */
+        .vertical-video-container {
+            width: 100%;
+            padding-bottom: 177.77%; /* 9:16 aspect ratio */
+            position: relative;
+        }
+        .vertical-video-container iframe, .vertical-video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Variável Global para o Link de Checkout -->
+    <script>
+        const CHECKOUT_LINK = "https://pay.cakto.com.br/CG6miE9?affiliate=doC7fWxt";
+    </script>
+
+    <!-- Cabeçalho Fixo (Sticky Header) - Configurado com MÉTODO P24 e espaçamento no CTA -->
+    <header id="sticky-header" class="fixed top-0 left-0 right-0 z-50 bg-gray-950 shadow-xl hidden transition-all duration-300">
+        <div class="max-w-7xl mx-auto p-3 flex justify-between items-center space-x-4">
+            <h2 class="text-xl font-black text-yellow-400 tracking-widest">MÉTODO P24</h2>
+            <a href="javascript:void(0)" onclick="window.open(CHECKOUT_LINK, '_blank')" class="cta-button text-gray-900 font-extrabold px-4 py-2 rounded-full text-sm sm:text-base whitespace-nowrap">
+                GARANTIR MINHA VAGA AGORA
+            </a>
+        </div>
+    </header>
+
+    <!-- SEÇÃO 1: HERO - A CHAMADA PRINCIPAL -->
+    <section class="min-h-screen flex items-center justify-center text-center p-4 pt-16" style="background-color: #000;">
+        <div class="max-w-5xl mx-auto animate-on-scroll">
+            <!-- Selo de Urgência -->
+            <div id="countdown" class="bg-red-700 text-white font-black text-lg py-2 px-6 rounded-full inline-block mb-6 shadow-2xl transition duration-500 ease-in-out hover:scale-105">
+                OFERTA EXPIRA EM: <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+            </div>
+
+            <h1 class="text-5xl sm:text-7xl font-black mb-6 leading-tight" style="color: var(--color-primary);">
+                COMO FIZ MINHA <span class="block mt-2">PRIMEIRA VENDA EM 24 HORAS</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-300 mb-10 font-light max-w-2xl mx-auto">
+                O caminho testado e validado para você parar de perder tempo e começar a lucrar no mercado digital ainda hoje.
+            </p>
+
+            <!-- CTA PRINCIPAL -->
+            <a href="javascript:void(0)" onclick="window.open(CHECKOUT_LINK, '_blank')" class="cta-button text-gray-900 font-extrabold text-2xl px-12 py-5 rounded-xl shadow-xl uppercase block w-full max-w-sm mx-auto sm:max-w-md">
+                QUERO LUCRAR EM 24H!
+            </a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 2: A PROVA - O QUE FUNCIONA (Com Imagens de Placeholder com Dimensões) -->
+    <section class="py-20 px-4 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl sm:text-5xl font-bold text-center mb-16 animate-on-scroll">
+                PARE DE TESTAR, COMECE A LUCRAR!
+            </h2>
+
+            <!-- Grid de Fotos e Prova -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Foto 1 - Comissões Diárias (192x192) -->
+                <div class="animate-on-scroll bg-gray-800 p-6 rounded-xl shadow-lg transform hover:scale-[1.01] transition duration-300 border-b-4 border-yellow-600">
+                    <!-- Placeholder Imagem 1 (Quadrado, h-48) -->
+                    <img src="IMG_1500.PNG" 
+                        alt="Screenshot de Comissões Diárias" 
+                        class="w-full h-48 object-cover rounded-lg mb-4" 
+                        width="192" 
+                        height="192" 
+                        onerror="this.onerror=null; this.src='https://placehold.co/192x192/374151/f59e0b?text=FOTO+1';"
+                    >
+                    <h3 class="text-xl font-semibold text-yellow-500">Comissões Diárias</h3>
+                    <p class="text-gray-400 mt-2">Veja os resultados reais que meus alunos estão alcançando, seguindo o método passo a passo.</p>
+                </div>
+                <!-- Foto 2 - Histórias de Sucesso (192x192) -->
+                <div class="animate-on-scroll bg-gray-800 p-6 rounded-xl shadow-lg transform hover:scale-[1.01] transition duration-300 border-b-4 border-yellow-600">
+                    <!-- Placeholder Imagem 2 (Quadrado, h-48) -->
+                    <img src="IMG_1501.PNG" 
+                        alt="Depoimento de Aluno no WhatsApp" 
+                        class="w-full h-48 object-cover rounded-lg mb-4" 
+                        width="192" 
+                        height="192" 
+                        onerror="this.onerror=null; this.src='https://placehold.co/192x192/374151/f59e0b?text=FOTO+2';"
+                    >
+                    <h3 class="text-xl font-semibold text-yellow-500">Histórias de Sucesso</h3>
+                    <p class="text-gray-400 mt-2">Mensagens e prints que comprovam a eficácia do "Primeira Venda em 24 Horas".</p>
+                </div>
+                <!-- Foto 3 - Liberdade Geográfica (192x192) -->
+                <div class="animate-on-scroll bg-gray-800 p-6 rounded-xl shadow-lg transform hover:scale-[1.01] transition duration-300 border-b-4 border-yellow-600">
+                    <!-- Placeholder Imagem 3 (Quadrado, h-48) -->
+                    <img src="IMG_1502.PNG" 
+                        alt="Foto do Caio Martins em um local exótico" 
+                        class="w-full h-48 object-cover rounded-lg mb-4" 
+                        width="192" 
+                        height="192" 
+                        onerror="this.onerror=null; this.src='https://placehold.co/192x192/374151/f59e0b?text=FOTO+3';"
+                    >
+                    <h3 class="text-xl font-semibold text-yellow-500">Liberdade Geográfica</h3>
+                    <p class="text-gray-400 mt-2">Trabalhe de onde quiser e viva a vida que você sempre sonhou, como eu faço.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 animate-on-scroll">
+                <!-- CORREÇÃO APLICADA AQUI: Adicionado 'block w-full max-w-sm mx-auto' para garantir fluidez e centralização no mobile -->
+                <a href="javascript:void(0)" onclick="window.open(CHECKOUT_LINK, '_blank')" class="cta-button text-gray-900 font-bold text-xl px-10 py-4 rounded-lg shadow-md block w-full max-w-sm mx-auto">
+                    ACESSAR O MÉTODO COMPLETO
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SEÇÃO 4: O QUE VOCÊ VAI APRENDER (Com Imagem de Placeholder com Dimensões) -->
+    <section class="py-20 px-4 bg-gray-900 border-t border-b border-yellow-700/30">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 animate-on-scroll">
+                O MÉTODO EXATO: MÓDULOS DO CURSO
+            </h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Lista de Benefícios (Módulos) -->
+                <div class="space-y-6">
+                    <div class="animate-on-scroll p-6 bg-gray-800 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2">Módulo 1: Mentalidade Inabalável</h3>
+                        <p class="text-gray-300">Antes de vender, você precisa ter a mentalidade correta. Eliminamos crenças limitantes para que o sucesso seja inevitável.</p>
+                    </div>
+                    <div class="animate-on-scroll p-6 bg-gray-800 rounded-lg shadow-lg" style="transition-delay: 0.1s;">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2">Módulo 2: O Passo a Passo da Primeira Venda</h3>
+                        <p class="text-gray-300">Da escolha do produto à execução da estratégia que gera a primeira comissão em 24h. Aulas 100% práticas.</p>
+                    </div>
+                    <div class="animate-on-scroll p-6 bg-gray-800 rounded-lg shadow-lg" style="transition-delay: 0.2s;">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2">Módulo 3: Tráfego Rápido e Escalável</h3>
+                        <p class="text-gray-300">Estratégias gratuitas e pagas (Google Ads, Facebook Ads) para trazer clientes qualificados até você.</p>
+                    </div>
+                </div>
+                <!-- Imagem do Produtor/Benefício (4:5 Aspect Ratio) -->
+                <div class="animate-on-scroll flex items-center justify-center">
+                    <img 
+                        src="Caio-Martins-4-scaled.jpg" 
+                        alt="Foto do Mentor Caio Martins" 
+                        class="w-full max-w-sm h-auto rounded-xl shadow-2xl ring-4 ring-yellow-500/50 object-cover"
+                        width="384"
+                        height="480"
+                        onerror="this.onerror=null; this.src='https://placehold.co/384x480/374151/f59e0b?text=CAIO+MARTINS+4:5';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 5 (PENÚLTIMA): VÍDEO LONGO - A VISÃO DO SUCESSO -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 text-yellow-500 animate-on-scroll">
+                O SEU FUTURO COMEÇA AGORA
+            </h2>
+            <p class="text-xl text-gray-300 mb-10 font-light animate-on-scroll">
+                Assista a este vídeo de 42 minutos e veja a prova viva do estilo de vida que você pode conquistar. Não é sonho, é resultado do método.
+            </p>
+
+            <!-- Container Responsivo para o Vídeo de 42 Minutos -->
+            <div class="animate-on-scroll aspect-video bg-gray-700 rounded-xl shadow-2xl overflow-hidden border-4 border-yellow-500/80">
+                <!-- Link de incorporação (embed) corrigido anteriormente -->
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/5zmzxe6E-IA?rel=0" title="A Vida de Luxo - Caio Martins" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 6 (ÚLTIMA): CTA FINAL E GARANTIA -->
+    <section class="py-20 px-4 bg-gradient-to-t from-gray-950 to-gray-800 border-t-8 border-yellow-500">
+        <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+            <h2 class="text-5xl sm:text-6xl font-black mb-8 text-white leading-tight">
+                PARE DE PROCURAR. <span class="text-yellow-400 block mt-2">A SOLUÇÃO ESTÁ AQUI.</span>
+            </h2>
+            <p class="text-2xl text-gray-300 mb-12 font-light">
+                O acesso à liberdade financeira que você sempre quis por um valor simbólico que se paga na primeira venda.
+            </p>
+
+            <!-- CTA FINAL - O MAIS IMPORTANTE -->
+            <a href="javascript:void(0)" onclick="window.open(CHECKOUT_LINK, '_blank')" class="cta-button text-gray-900 font-extrabold text-3xl px-16 py-6 rounded-xl shadow-2xl uppercase block w-full max-w-lg mx-auto transform hover:scale-[1.05] transition duration-500">
+                QUERO FAZER MINHA PRIMEIRA VENDA AGORA!
+            </a>
+
+            <!-- Outras Coisinhas: Garantia e Acesso Imediato -->
+            <div class="mt-10 flex flex-wrap justify-center gap-6">
+                <div class="text-center p-4 rounded-lg bg-gray-900/50 border border-yellow-500/50">
+                    <svg class="w-8 h-8 mx-auto mb-2 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <p class="text-white font-bold">GARANTIA INCONDICIONAL DE 7 DIAS</p>
+                </div>
+                <div class="text-center p-4 rounded-lg bg-gray-900/50 border border-yellow-500/50">
+                    <svg class="w-8 h-8 mx-auto mb-2 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h3a1 1 0 100-2h-3zM5 4a1 1 0 011-1h1a1 1 0 110 2H6a1 1 0 01-1-1zm0 4a1 1 0 011-1h6a1 1 0 110 2H6a1 1 0 01-1-1zm0 4a1 1 0 011-1h6a1 1 0 110 2H6a1 1 0 01-1-1zM4 15a1 1 0 002 0v-2a1 1 0 00-2 0v2zM12 15a1 1 0 100-2v2a1 1 0 100 2zM9 13a1 1 0 01-1-1v-2a1 1 0 112 0v2a1 1 0 01-1 1zM15 13a1 1 0 100-2v2a1 1 0 100 2zM18 6H8a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2V8a2 2 0 00-2-2zM8 8h10v6H8V8z"></path></svg>
+                    <p class="text-white font-bold">ACESSO IMEDIATO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ LEGAL -->
+    <footer class="p-6 text-center text-xs text-gray-500 bg-gray-950">
+        <p>&copy; 2025 Primeira Venda em 24 Horas. Todos os direitos reservados.</p>
+        <p class="mt-2">Política de Privacidade | Termos de Uso | Contato: eomilionariosuporte@gmail.com </p>
+    </footer>
+
+    <!-- SCRIPT PARA ANIMAÇÕES E INTERATIVIDADE -->
+    <script>
+        // === CRONÔMETRO DE URGÊNCIA ===
+        function startCountdown() {
+            // Define o tempo que a oferta vai durar (ex: 2 horas)
+            const duration = 2 * 60 * 60 * 1000; // 2 horas em milissegundos
+            // Nota: O uso de localStorage é aceitável aqui para simular o timer de escassez em uma LP simples.
+            let endTime = localStorage.getItem('countdownEndTime');
+
+            // Se não houver um tempo final salvo, define um novo
+            if (!endTime || new Date().getTime() > parseInt(endTime)) {
+                endTime = new Date().getTime() + duration;
+                localStorage.setItem('countdownEndTime', endTime);
+            } else {
+                 // Converte para Number para garantir a comparação
+                 endTime = parseInt(endTime);
+            }
+
+            const countdownElement = document.getElementById('countdown');
+            const hoursSpan = document.getElementById('hours');
+            const minutesSpan = document.getElementById('minutes');
+            const secondsSpan = document.getElementById('seconds');
+
+            const timerInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+
+                if (distance < 0) {
+                    clearInterval(timerInterval);
+                    countdownElement.innerHTML = "OFERTA EXPIRADA";
+                    return;
+                }
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                hoursSpan.textContent = String(hours).padStart(2, '0');
+                minutesSpan.textContent = String(minutes).padStart(2, '0');
+                secondsSpan.textContent = String(seconds).padStart(2, '0');
+            }, 1000);
+        }
+
+        // === ANIMAÇÃO DE SCROLL (FADE-IN) ===
+        function setupScrollAnimations() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // O elemento precisa estar 10% visível
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        // Para de observar depois de animar
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            elements.forEach(el => observer.observe(el));
+        }
+
+        // === HEADER STICKY (CABECALHO FIXO) ===
+        function setupStickyHeader() {
+            const header = document.getElementById('sticky-header');
+            // Ajusta para pegar a altura de forma mais confiável, ignorando padding/margin
+            const heroHeight = document.querySelector('section').scrollHeight; 
+
+            window.addEventListener('scroll', () => {
+                // Mostra o header fixo após passar a primeira seção (aproximadamente metade)
+                if (window.scrollY > heroHeight / 2) {
+                    header.classList.remove('hidden');
+                    header.classList.add('flex');
+                } else {
+                    header.classList.add('hidden');
+                    header.classList.remove('flex');
+                }
+            });
+        }
+
+        // Inicializa todas as funcionalidades ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            startCountdown();
+            setupScrollAnimations();
+            setupStickyHeader();
+        });
+    </script>
+</body>
+</html>
